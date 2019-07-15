@@ -1,0 +1,19 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceDataset_vfi",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"script": "\n\nsource(output(\n\t\tclienteID as integer,\n\t\tnome as string,\n\t\tendereco as string,\n\t\tcidade as string,\n\t\testado as string,\n\t\tsexo as string,\n\t\trenda as decimal(12,2)\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table',\n\tstaged: false) ~> source1\nsource1 filter(equals(estado,'SP')) ~> Filter1"
+		}
+	}
+}
