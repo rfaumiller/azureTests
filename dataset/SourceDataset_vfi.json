@@ -1,0 +1,58 @@
+{
+	"name": "SourceDataset_vfi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDW",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "clienteID",
+				"type": "int",
+				"precision": 10,
+				"scale": 255
+			},
+			{
+				"name": "nome",
+				"type": "varchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "endereco",
+				"type": "varchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "cidade",
+				"type": "varchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "estado",
+				"type": "char",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "sexo",
+				"type": "char",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "renda",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[Cliente]"
+		}
+	}
+}
